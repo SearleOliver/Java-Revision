@@ -72,8 +72,8 @@ public class Demo {
 
         students.add(new Student(3,  "Al"));
         students.add(new Student(73, "Bob Mortimer"));
-        students.add(new Student(73, "Alexander the Great"));
         students.add(new Student(73, "Hunter Biden"));
+        students.add(new Student(73, "Alexander the Great"));
         students.add(new Student(7,  "Desmund"));
 
         // Natural order (Comparable)

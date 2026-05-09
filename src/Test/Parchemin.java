@@ -22,6 +22,8 @@ class Date implements Comparable<Date> {
 		return this.day+"/"+this.month+"/"+this.year;
 	}
 	
+
+	
 	@Override
     public int compareTo(Date other) {
         if (this.year != other.year)
@@ -58,7 +60,12 @@ public class Parchemin implements Comparable<Parchemin> {
         this.date = date;
     }
     
-    
+	public String getTitre() {
+		return this.titre;
+	}
+    public Student getAuteur() {
+    	return this.auteur;
+    }
     
     @Override
     public String toString() {
@@ -85,6 +92,12 @@ public class Parchemin implements Comparable<Parchemin> {
         return this.auteur.toString().compareTo(other.auteur.toString());
     }
     
+    public void rendreParchemin (String name, Parchemin ...parchemins) {
+    	for (Parchemin parchemin : parchemins) {
+    		System.out.println(name+" a rendu "+parchemin.titre);
+    	}
+    }
+    
     
     public int hashCode () {
     	return 31*(titre.hashCode()+auteur.hashCode());
@@ -93,13 +106,6 @@ public class Parchemin implements Comparable<Parchemin> {
     public static String lented(Set<Parchemin> lent) {
     	return "Have we lent ? " + (lent.size()!=0);
     }
-    
-    public static void rendreParchemin (Student stud, Parchemin... parchemins) {
-    	for (int i=0; i < parchemins.length; i++) {
-    		System.out.println(stud.getName()+" a rendu "+parchemins[i].toString());
-    	}
-    }
-    
     
     
     public static void main (String a[]) {
