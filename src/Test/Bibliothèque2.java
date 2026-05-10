@@ -9,6 +9,7 @@ public class Bibliothèque2 implements Iterable<Parchemin>{
 	private Parchemin[] parchemins;
 	private int nbParch;
 	private int nombreOp =0;
+	private HashMap<>
 
 	public Bibliothèque2(int size) {
 		this.size = size;

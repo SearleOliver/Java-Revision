@@ -15,14 +15,6 @@ public class Bibliotheque {
         contenu.get(auteur).add(parchemin);
     }
 
-    /**
-     * Renvoie la bibliothèque sous forme :
-     * Auteur :
-     *    (date) titre
-     *    (date) titre
-     * Auteur :
-     *    ...
-     */
     public String donnerParcheminsParAuteur() {
         StringBuilder sb = new StringBuilder();
 

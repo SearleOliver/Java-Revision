@@ -1,6 +1,6 @@
 package Test;
 
-public class Game {
+public class Game implements Comparable<Game>{
 	private String name;
 	private Student creator;
 	private int year;
@@ -19,12 +19,30 @@ public class Game {
 		return this.name;
 	}
 	
+	public String toString() {
+		return ("game : "+this.name+" creator : "+this.creator.getName()+" year : "+ this.getYear()+"\n");
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Game game) {
-			return this.name.equals(game.getName());
+			return this.name.equals(game.getName())&& this.year==game.getYear();
 		}
 		return false;
+	}
+	
+	@Override
+	public int compareTo (Game game) {
+		int comparison = this.name.compareTo(game.getName());
+		if (comparison == 0) {
+			comparison = this.year-game.getYear();
+		}
+		return comparison;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 31*this.name.hashCode()*this.year;
 	}
 	
 	public static void main(String[] args) {
